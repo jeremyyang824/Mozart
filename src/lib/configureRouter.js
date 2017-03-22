@@ -6,11 +6,12 @@ import {Router, Scene, Reducer, Modal, Switch, Actions, ActionConst} from 'react
 import Error from '../components/shared/Error';
 import Home from '../containers/Home';
 import MainMenu from '../containers/MainMenu';
+import ModalMessage from '../components/shared/ModalMessage';
 
 const getSceneStyle = (props, computedProps) => {
     const style = {
         flex: 1,
-        backgroundColor: '#ccc',
+        backgroundColor: 'white',
         shadowColor: null,
         shadowOffset: null,
         shadowOpacity: null,
@@ -48,6 +49,7 @@ export default function configureRouter() {
                             title='Welcomet to Mozart!' titleStyle={{ color: '#007457' }}/>
                     </Scene>
                 </Scene>
+                <Scene key="messageModal" component={ModalMessage} />
                 <Scene key="error" component={Error} />
             </Scene>
         </RouterWithRedux>

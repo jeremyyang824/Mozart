@@ -16,6 +16,7 @@ class Foo extends React.Component {
                 <Button onPress={this.props.loadFooValue.bind(this, 'ddd')}
                     containerStyle={{padding:10, height:58, overflow:'hidden', borderRadius:4, borderWidth:1, borderColor: '#007457', backgroundColor: 'white'}}
                     style={{fontSize: 28, color: '#007457'}}>测试</Button>
+                <Button onPress={this.props.showModal.bind(this, '这是一个弹出框消息')}>弹出框</Button>
             </View>
         );
     }
