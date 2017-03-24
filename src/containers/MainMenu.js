@@ -17,11 +17,14 @@ class MainMenu extends React.Component {
         const children = state.children;
         return (
             <Drawer
-                onOpen={() => Actions.refresh({ key: state.key, open: true })}
-                onClose={() => Actions.refresh({ key: state.key, open: false })}
+                ref={(ref) => this._drawer = ref}
+                onOpen={() => 
+                    {debugger;Actions.refresh({ key: state.key, open: true })}}
+                onClose={() => 
+                    {debugger;Actions.refresh({ key: state.key, open: false })}}
                 content={<MainMenuRender />}
                 openDrawerOffset={0.2}
-                closedDrawerOffset={() => 30}
+                closedDrawerOffset={() => 0}
                 panCloseMask={0.2}
                 tweenHandler={(ratio) => ({
                     main: { opacity: Math.max(0.54, 1 - ratio) },
@@ -32,16 +35,16 @@ class MainMenu extends React.Component {
     }
 }
 
-export default MainMenu;
-// export default connect(
-//     (state, ownProps) => {
-//         //map state to props
-//         return {};
-//     },
-//     dispatch => {
-//         //map dispatch to props
-//         return {
-//             //actions: bindActionCreators(actions, dispatch)
-//         }
-//     }
-// )(MainMenu);  
+//export default MainMenu;
+export default connect(
+    (state, ownProps) => {
+        //map state to props
+        return {};
+    },
+    dispatch => {
+        //map dispatch to props
+        return {
+            //actions: bindActionCreators(actions, dispatch)
+        }
+    }
+)(MainMenu);  

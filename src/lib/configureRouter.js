@@ -42,11 +42,8 @@ export default function configureRouter() {
         <RouterWithRedux getSceneStyle={getSceneStyle}>
             <Scene key="modal" component={Modal} >
                 <Scene key='root' hideNavBar hideTabBar>
-                    <Scene key='home' component={Home} type='replace' hideNavBar={false} 
-                            title='Welcomet to Mozart!' titleStyle={{ color: 'blue' }}/>
                     <Scene key="main-menu" component={MainMenu} initial>
-                        <Scene key='home1' component={Home} type='replace' 
-                            title='Welcomet to Mozart!' titleStyle={{ color: '#007457' }}/>
+                        <Scene key='home' hideNavBar component={Home} type='replace' />
                     </Scene>
                 </Scene>
                 <Scene key="messageModal" component={ModalMessage} />
